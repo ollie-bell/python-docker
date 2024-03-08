@@ -1,6 +1,10 @@
-from flask import Flask
-app = Flask(__name__)
+from dotenv import dotenv_values
 
-@app.route('/')
-def hello_world():
-    return 'Hello, Docker!'
+secrets = dotenv_values(".env.secret")
+
+def main():
+    print(secrets["API_KEY"])
+    print(secrets["API_SECRET"])
+
+if __name__ == "__main__":
+    main()
