@@ -7,3 +7,11 @@ services:
       context: .
     ports:
       - 8088:8088
+    environment:
+      SECRET_ENV_FILE: /run/secrets/my_secret
+    secrets:
+      - my_secret
+
+secrets:
+  my_secret:
+    file: .env.secret

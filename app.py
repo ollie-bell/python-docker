@@ -1,6 +1,7 @@
+import os
 from dotenv import dotenv_values
 
-secrets = dotenv_values(".env.secret")
+secrets = dotenv_values(os.getenv("SECRET_ENV_FILE"))
 
 def main():
     print(secrets["API_KEY"])
