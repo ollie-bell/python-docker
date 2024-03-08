@@ -22,3 +22,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v2.0.3
+        with:
+          envkey_API_KEY: ${{ secrets.API_KEY }}
+          envkey_API_SECRET: ${{ secrets.API_SECRET }}
+          file_name: secret.env
+      - name: Build and run app
+        run: docker-compose up -d
