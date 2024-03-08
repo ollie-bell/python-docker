@@ -14,4 +14,4 @@ services:
 
 secrets:
   my_secret:
-    file: .env.secret
+    file: secret.env
